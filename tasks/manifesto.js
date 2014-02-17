@@ -20,11 +20,11 @@ module.exports = function(grunt) {
     });
 
     var manifest = {
-      manifest: options.priority.slice(); // copy to prevent pushing values to reference
+      manifest: options.priority.slice() // copy to prevent pushing values to reference
     };
 
     if (options.root) {
-      manifest.root = root;
+      manifest.root = options.root;
     }
 
     this.files.forEach(function(f) {
