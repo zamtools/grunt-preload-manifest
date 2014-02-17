@@ -1,8 +1,8 @@
 /*
- * grunt-manifesto
- * https://github.com/zamtools/grunt-manifesto
+ * grunt-preload-manifest
+ * https://github.com/zamtools/grunt-preload-manifest
  *
- * Copyright (c) 2014 Ian Zamojc
+ * Copyright (c) 2014 Zamtools Inc.
  * Licensed under the MIT license.
  */
 
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       tests: ['tmp'],
     },
 
-    manifesto: {
+    manifest: {
       default_options: {
         options: {
         },
@@ -108,6 +108,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
-  grunt.registerTask('test', ['clean', 'manifesto', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'manifest', 'nodeunit']);
   grunt.registerTask('default', ['jshint', 'test']);
 };

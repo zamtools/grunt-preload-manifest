@@ -2,7 +2,7 @@
 
 var grunt = require('grunt');
 
-exports.manifesto = {
+exports.preload_manifest = {
   setUp: function(done) {
     done();
   },

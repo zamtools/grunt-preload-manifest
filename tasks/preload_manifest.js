@@ -1,8 +1,8 @@
 /*
- * grunt-manifesto
- * https://github.com/zamtools/grunt-manifesto
+ * grunt-preload-manifest
+ * https://github.com/zamtools/grunt-preload-manifest
  *
- * Copyright (c) 2014 Ian Zamojc
+ * Copyright (c) 2014 Zamtools Inc.
  * Licensed under the MIT license.
  */
 
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
   var path = require('path');
   var _ = require('lodash');
 
-  grunt.registerMultiTask('manifesto', 'Creates manifest files that can be used by preloaders such as PreloadJS.', function() {
+  grunt.registerMultiTask('manifest', 'Creates manifest files that can be used by preloaders such as PreloadJS.', function() {
     var options = this.options({
       root: null,
       priorities: [],
