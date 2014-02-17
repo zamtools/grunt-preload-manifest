@@ -15,12 +15,12 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('manifesto', 'Creates manifest files that can be used by preloaders such as PreloadJS.', function() {
     var options = this.options({
       root: null,
-      priority: [],
+      priorities: [],
       indent: 4
     });
 
     var manifest = {
-      manifest: options.priority.slice() // copy to prevent pushing values to reference
+      manifest: options.priorities.slice() // copy to prevent pushing values to reference
     };
 
     if (options.root) {
@@ -37,10 +37,10 @@ module.exports = function(grunt) {
         }
       });
 
-      console.log(src);
-
       src.forEach(function(filepath) {
-        manifest.manifest.push(filepath);
+        if (!_.contains(priorities, filepath)) {
+          manifest.manifest.push(filepath);
+        }
       });
 
       grunt.file.write(f.dest, JSON.stringify(manifest, undefined, options.indent));
