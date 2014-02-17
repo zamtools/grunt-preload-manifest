@@ -39,19 +39,19 @@ grunt.initConfig({
 
 #### options.root
 Type: `String`
-Default value: null
+Default value: `null`
 
-The base path that is shared by all assets URLs in the manifest. This reduces the file size of the manifest by eliminating the need to prefix the URL for each asset. Remember to include a trailing ```/``` at the end of this path.
+The base path that is shared by all assets URLs in the manifest. This reduces the file size of the manifest by eliminating the need to prefix the URL for each asset. Remember to include a trailing `/` at the end of this path.
 
 #### options.priorities
 Type: `Array`
-Default value: []
+Default value: `[]`
 
 A list of asset URLs that should come first in the manifest. This will ensure those assets are preloaded as soon as possible. These URLs are relative to the root URL just like the other assets in the manifest.
 
 #### options.indent
 Type: `Integer or String`
-Default value: 4
+Default value: `4`
 
 Controls the indentation of the JSON data in the manifest. An integer will indent with that number of spaces, a string will indent using that string, and null will result in no indentation.
 
@@ -74,7 +74,7 @@ Controls the indentation of the JSON data in the manifest. An integer will inden
 ```
 
 #### Default Options
-The default options are used to add all files within the ```app/static``` directory to the manifest. Be sure to include the ```filter: isFile``` to prevent directories from being added.
+The default options are used to add all files within the `app/static` directory to the manifest. Be sure to include the ```filter: isFile``` to prevent directories from being added.
 
 ```js
 grunt.initConfig({
@@ -93,7 +93,7 @@ grunt.initConfig({
 ```
 
 #### Images only
-Globbing patterns are used to only add images within the ```app/static``` directory to the manifest.
+Globbing patterns are used to only add images within the `app/static` directory to the manifest.
 
 ```js
 grunt.initConfig({
@@ -158,4 +158,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+0.1.0 - Initial release
