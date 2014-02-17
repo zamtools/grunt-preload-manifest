@@ -47,7 +47,7 @@ The base path that is shared by all assets URLs in the manifest. This reduces th
 Type: `Array`
 Default value: []
 
-A list of asset URLs that should come first in the manifest. This will ensure those assets are preloaded as soon as possible. Remember *not* include any leading slashes at the beginning of any paths.
+A list of asset URLs that should come first in the manifest. This will ensure those assets are preloaded as soon as possible. These URLs are relative to the root URL just like the other assets in the manifest.
 
 #### options.indent
 Type: `Integer or String`
@@ -74,7 +74,7 @@ Controls the indentation of the JSON data in the manifest. An integer will inden
 ```
 
 #### Default Options
-In this example, the default options are used to URLs to all files within the ```app/static``` directory in the manifest.
+The default options are used to add all files within the ```app/static``` directory to the manifest. Be sure to include the ```filter: isFile``` to prevent directories from being added.
 
 ```js
 grunt.initConfig({
@@ -84,6 +84,68 @@ grunt.initConfig({
       {
         cwd: 'app/static',
         src: ['**/*'],
+        dest: 'app/preload_manifest.json',
+        filter: 'isFile'
+      }
+    ],
+  },
+});
+```
+
+#### Images only
+Globbing patterns are used to only add images within the ```app/static``` directory to the manifest.
+
+```js
+grunt.initConfig({
+  manifesto: {
+    options: {},
+    files: [
+      {
+        cwd: 'app/static',
+        src: ['**/*.{jpg,jpeg,gif,png}'],
+        dest: 'app/preload_manifest.json',
+        filter: 'isFile'
+      }
+    ],
+  },
+});
+```
+
+#### Root Option
+The root option is used add a root URL to the manifest, eliminating the need to prefix all asset URLs with said root URL.
+
+```js
+grunt.initConfig({
+  manifesto: {
+    options: {
+      root: 'static/assets/'
+    },
+    files: [
+      {
+        cwd: 'app/static',
+        src: ['**/*.{jpg,jpeg,gif,png}'],
+        dest: 'app/preload_manifest.json',
+        filter: 'isFile'
+      }
+    ],
+  },
+});
+```
+
+#### Priorities Option
+The priorities option is used to ensure certain assets are loaded first.
+
+```js
+grunt.initConfig({
+  manifesto: {
+    options: {
+      root: 'static/assets/'
+      priorities: ['images/logo.jpg', 'images/background.jpg']
+    },
+    files: [
+      {
+        cwd: 'app/static',
+        src: ['**/*.{jpg,jpeg,gif,png}'],
         dest: 'app/preload_manifest.json',
         filter: 'isFile'
       }
