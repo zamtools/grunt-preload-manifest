@@ -53,7 +53,7 @@ A list of asset URLs that should come first in the manifest. This will ensure th
 Type: `Integer or String`
 Default value: `4`
 
-Controls the indentation of the JSON data in the manifest. An integer will indent with that number of spaces, a string will indent using that string, and null will result in no indentation.
+Controls the indentation of the JSON data in the manifest. An integer will indent by that number of spaces, a string will indent using that string, and null will result in no indentation.
 
 ### Usage Examples
 
