@@ -9,40 +9,40 @@
 'use strict';
 
 module.exports = function(grunt) {
-
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+  var _ = require('lodash');
 
   grunt.registerMultiTask('manifesto', 'Creates manifest files that can be used by preloaders such as PreloadJS.', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
+      root: null,
+      priority: [],
+      stripCwd: true,
+      indent: 4
     });
 
-    // Iterate over all specified file groups.
+    var manifest = {
+      manifest: options.priority.slice(); // copy to prevent pushing values to reference
+    };
+
+    if (options.root) {
+      manifest.root = root;
+    }
+
     this.files.forEach(function(f) {
-      // Concat specified files.
       var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
         } else {
           return true;
         }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+      });
 
-      // Handle options.
-      src += options.punctuation;
+      src.forEach(function(filepath) {
+        manifest.manifest.push(filepath);
+      });
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+      grunt.file.write(f.dest, JSON.stringify(manifest, undefined, options.indent));
 
-      // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" created.');
     });
   });
