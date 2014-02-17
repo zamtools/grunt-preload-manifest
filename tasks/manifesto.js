@@ -37,6 +37,8 @@ module.exports = function(grunt) {
         }
       });
 
+      console.log(src);
+
       src.forEach(function(filepath) {
         manifest.manifest.push(filepath);
       });
