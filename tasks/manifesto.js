@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       });
 
       src.forEach(function(filepath) {
-        if (!_.contains(priorities, filepath)) {
+        if (!_.contains(options.priorities, filepath)) {
           manifest.manifest.push(filepath);
         }
       });

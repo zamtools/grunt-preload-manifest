@@ -36,7 +36,62 @@ module.exports = function(grunt) {
             dest: 'tmp/default_options.json',
             filter: 'isFile'
           }
-        ],
+        ]
+      },
+      images_only: {
+        options: {
+        },
+        files: [
+          {
+            cwd: 'test/fixtures',
+            src: ['**/*.{jpg,jpeg,gif,png}'],
+            dest: 'tmp/images_only.json',
+            filter: 'isFile'
+          }
+        ]
+      },
+      root_option: {
+        options: {
+          root: 'dest/root/'
+        },
+        files: [
+          {
+            cwd: 'test/fixtures',
+            src: ['**/*'],
+            dest: 'tmp/root_option.json',
+            filter: 'isFile'
+          }
+        ]
+      },
+      priorities_option: {
+        options: {
+          priorities: [
+            'primary/fourth.jpeg',
+            'primary/third.gif',
+            'secondary/d.woff'
+          ]
+        },
+        files: [
+          {
+            cwd: 'test/fixtures',
+            src: ['**/*'],
+            dest: 'tmp/priorities_option.json',
+            filter: 'isFile'
+          }
+        ]
+      },
+      indent_option: {
+        options: {
+          indent: null
+        },
+        files: [
+          {
+            cwd: 'test/fixtures',
+            src: ['**/*'],
+            dest: 'tmp/indent_option.json',
+            filter: 'isFile'
+          }
+        ]
       }
     },
 

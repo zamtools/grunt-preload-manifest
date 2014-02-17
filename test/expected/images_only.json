@@ -1,0 +1,8 @@
+{
+    "manifest": [
+        "primary/first.jpg",
+        "primary/fourth.jpeg",
+        "primary/second.png",
+        "primary/third.gif"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "manifest": [
+        "primary/fourth.jpeg",
+        "primary/third.gif",
+        "secondary/d.woff",
+        "primary/first.jpg",
+        "primary/junk.txt",
+        "primary/second.png",
+        "secondary/a.ttf",
+        "secondary/b.svg",
+        "secondary/c.eot"
+    ]
+}
