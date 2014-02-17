@@ -29,9 +29,14 @@ module.exports = function(grunt) {
       default_options: {
         options: {
         },
-        files: {
-          'tmp/default_options.json': ['test/fixtures/images/*']
-        },
+        files: [
+          {
+            cwd: 'test/fixtures',
+            src: ['**/*'],
+            dest: 'tmp/default_options.json',
+            filter: 'isFile'
+          }
+        ],
       }
     },
 

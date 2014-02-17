@@ -9,13 +9,13 @@
 'use strict';
 
 module.exports = function(grunt) {
+  var path = require('path');
   var _ = require('lodash');
 
   grunt.registerMultiTask('manifesto', 'Creates manifest files that can be used by preloaders such as PreloadJS.', function() {
     var options = this.options({
       root: null,
       priority: [],
-      stripCwd: true,
       indent: 4
     });
 
@@ -28,8 +28,9 @@ module.exports = function(grunt) {
     }
 
     this.files.forEach(function(f) {
+      var cwd = f.orig.cwd;
       var src = f.src.filter(function(filepath) {
-        if (!grunt.file.exists(filepath)) {
+        if (!grunt.file.exists(cwd + path.sep + filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
         } else {
@@ -46,5 +47,4 @@ module.exports = function(grunt) {
       grunt.log.writeln('File "' + f.dest + '" created.');
     });
   });
-
 };
