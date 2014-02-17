@@ -28,9 +28,8 @@ module.exports = function(grunt) {
     }
 
     this.files.forEach(function(f) {
-      var cwd = f.orig.cwd;
       var src = f.src.filter(function(filepath) {
-        if (!grunt.file.exists(cwd + path.sep + filepath)) {
+        if (!grunt.file.exists(f.orig.cwd + path.sep + filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
         } else {
