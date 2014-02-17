@@ -1,4 +1,4 @@
-# grunt-manifesto
+# grunt-preload-manifest
 
 > Creates manifest files that can be used by preloaders such as PreloadJS.
 
@@ -8,23 +8,23 @@ This plugin requires Grunt `~0.4.2`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-manifesto --save-dev
+npm install grunt-preload-manifest --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-manifesto');
+grunt.loadNpmTasks('grunt-preload-manifest');
 ```
 
-## The "manifesto" task
+## The "manifest" task
 
 ### Overview
-In your project's Gruntfile, add a section named `manifesto` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `manifest` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  manifesto: {
+  manifest: {
     options: {
       // Task-specific options go here.
     },
@@ -78,7 +78,7 @@ The default options are used to add all files within the `app/static` directory 
 
 ```js
 grunt.initConfig({
-  manifesto: {
+  manifest: {
     options: {},
     files: [
       {
@@ -97,7 +97,7 @@ Globbing patterns are used to only add images within the `app/static` directory 
 
 ```js
 grunt.initConfig({
-  manifesto: {
+  manifest: {
     options: {},
     files: [
       {
@@ -116,7 +116,7 @@ The root option is used add a root URL to the manifest, eliminating the need to 
 
 ```js
 grunt.initConfig({
-  manifesto: {
+  manifest: {
     options: {
       root: 'static/assets/'
     },
@@ -137,7 +137,7 @@ The priorities option is used to ensure certain assets are loaded first.
 
 ```js
 grunt.initConfig({
-  manifesto: {
+  manifest: {
     options: {
       root: 'static/assets/'
       priorities: ['images/logo.jpg', 'images/background.jpg']
