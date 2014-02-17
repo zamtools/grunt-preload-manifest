@@ -57,6 +57,22 @@ Controls the indentation of the JSON data in the manifest. An integer will inden
 
 ### Usage Examples
 
+#### Example Manifest
+
+```json
+{
+    "manifest": [
+        "primary/first.jpg",
+        "primary/junk.txt",
+        "primary/second.png",
+        "secondary/a.ttf",
+        "secondary/b.svg",
+        "secondary/c.eot",
+    ],
+    "root": "static/assets/"
+}
+```
+
 #### Default Options
 In this example, the default options are used to URLs to all files within the ```app/static``` directory in the manifest.
 
