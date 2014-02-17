@@ -37,17 +37,23 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.root
 Type: `String`
-Default value: `',  '`
+Default value: null
 
-A string value that is used to do something with whatever.
+The base path that is shared by all assets URLs in the manifest. This reduces the file size of the manifest by eliminating the need to prefix the URL for each asset. Remember to include a trailing ```/``` at the end of this path.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.priorities
+Type: `Array`
+Default value: []
 
-A string value that is used to do something else with whatever else.
+A list of asset URLs that should come first in the manifest. This will ensure those assets are preloaded as soon as possible. Remember *not* include any leading slashes at the beginning of any paths.
+
+#### options.indent
+Type: `Integer or String`
+Default value: 4
+
+Controls the indentation of the JSON data in the manifest. An integer will indent with that number of spaces, a string will indent using that string, and null will result in no indentation.
 
 ### Usage Examples
 
