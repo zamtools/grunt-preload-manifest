@@ -1,11 +1,11 @@
 {
   "name": "grunt-preload-manifest",
   "description": "Creates manifest files that can be used by preloaders such as PreloadJS.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/zamtools/grunt-preload-manifest",
   "author": {
-    "name": "Ian Zamojc",
-    "email": "izamojc@zamtools.com"
+    "name": "Zamtools Inc.",
+    "email": "zamtools@zamtools.com"
   },
   "repository": {
     "type": "git",
