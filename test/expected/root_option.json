@@ -10,5 +10,5 @@
         "secondary/c.eot",
         "secondary/d.woff"
     ],
-    "root": "dest/root/"
+    "path": "dest/root/"
 }

@@ -69,7 +69,7 @@ Controls the indentation of the JSON data in the manifest. An integer will inden
         "secondary/b.svg",
         "secondary/c.eot",
     ],
-    "root": "static/assets/"
+    "path": "static/assets/"
 }
 ```
 
@@ -112,7 +112,7 @@ grunt.initConfig({
 ```
 
 #### Root Option
-The root option is used add a root URL to the manifest, eliminating the need to prefix all asset URLs with said root URL.
+The root option is used add a `path` URL to the manifest, eliminating the need to prefix all asset URLs with said root URL.
 
 ```js
 grunt.initConfig({
@@ -158,4 +158,5 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+0.1.5 - root is now path in manifest, as per specification
 0.1.0 - Initial release

@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     };
 
     if (options.root) {
-      manifest.root = options.root;
+      manifest.path = options.root;
     }
 
     this.files.forEach(function(f) {
